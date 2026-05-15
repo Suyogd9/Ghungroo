@@ -3,309 +3,445 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Question · Thank You, Ghungroo</title>
+  <title>A Date? · Thank You, Ghungroo</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,300;1,8..60,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/styles.css" />
   <style>
-    /* Dark inversion just for this final page */
-    body { background: #1A1612; color: #ECE5D8; }
-    .masthead {
-      border-color: #6B5D4F;
-      color: #A89B8C;
-    }
-    .masthead .left, .masthead .right { color: #A89B8C; }
-    .masthead .title { color: #ECE5D8; }
-    .masthead .title:hover { color: var(--accent); }
-
-    .nav {
-      border-color: #6B5D4F;
-      background: rgba(26, 22, 18, 0.95);
-    }
-    .nav a { color: #A89B8C; }
-    .nav a:hover { color: #ECE5D8; }
-    .nav a.active { color: #ECE5D8; }
-
-    article h1, article h2, article h3 { color: #ECE5D8; }
-    article p { color: #C9BFB1; }
-    .deck { color: #A89B8C; }
-    .pullquote { color: #ECE5D8; }
-    .pullquote .attribution { color: #A89B8C; }
-    .body-text > p:first-of-type::first-letter { color: var(--accent); }
-
-    .section-number { color: #6B5D4F; }
-    hr { border-color: #6B5D4F; }
-    .dinkus { color: #6B5D4F; }
-
-    .page-end { border-color: #6B5D4F; }
-    .page-end .pages a { color: #ECE5D8; }
-    .page-end .pages a .dir { color: #6B5D4F; }
-
-    .colophon { color: #6B5D4F; }
-
-    /* THE RSVP */
-    .rsvp {
-      margin: 4rem 0;
-      border-top: 1px solid var(--accent);
-      border-bottom: 1px solid var(--accent);
-      padding: 3rem 0;
+    /* Date page specific */
+    .date-facts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 2.5rem 0;
     }
 
-    .rsvp-label {
-      font-family: var(--sans);
-      font-size: 0.78rem;
-      letter-spacing: 0.2em;
+    .date-fact {
+      background: var(--bg-card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.5rem 1.5rem 1.75rem;
+      transition: all 0.25s ease;
+    }
+
+    .date-fact:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .date-fact .icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      margin-bottom: 1rem;
+      font-size: 1.05rem;
+    }
+
+    .date-fact .lbl {
+      font-family: var(--mono);
+      font-size: var(--t-mono);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--fg-4);
+      margin-bottom: 0.4rem;
+    }
+
+    .date-fact .val {
+      font-size: 1.15rem;
+      font-weight: 500;
+      letter-spacing: -0.015em;
+      color: var(--fg);
+      line-height: 1.3;
+    }
+
+    @media (max-width: 700px) { .date-facts { grid-template-columns: 1fr; } }
+
+    /* RSVP — premium interactive */
+    .rsvp-block {
+      background: var(--fg);
+      color: var(--bg);
+      border-radius: var(--radius-lg);
+      padding: clamp(2rem, 5vw, 3.5rem);
+      margin: 3rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .rsvp-block::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(212, 80, 30, 0.25), transparent 70%);
+      pointer-events: none;
+    }
+
+    .rsvp-block .rsvp-eyebrow {
+      font-family: var(--mono);
+      font-size: var(--t-mono);
+      letter-spacing: 0.04em;
       text-transform: uppercase;
       color: var(--accent);
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 0.6rem;
     }
 
-    .rsvp-label::after {
+    .rsvp-block .rsvp-eyebrow::before {
       content: "";
-      flex: 1;
-      height: 1px;
+      width: 6px; height: 6px;
       background: var(--accent);
-      opacity: 0.4;
+      border-radius: 50%;
     }
 
-    .rsvp h3 {
-      font-family: var(--display);
-      font-weight: 400;
-      font-size: 1.8rem;
-      color: #ECE5D8;
-      margin: 0 0 2rem;
+    .rsvp-block h2 {
+      font-family: var(--sans);
+      color: var(--bg);
+      font-size: clamp(2rem, 4vw, 3rem);
+      letter-spacing: -0.03em;
+      margin-bottom: 0.7rem;
+      line-height: 1.05;
+    }
+
+    .rsvp-block h2 .serif {
+      font-family: var(--serif);
       font-style: italic;
+      font-weight: 400;
+    }
+
+    .rsvp-block > p {
+      color: var(--fg-5);
+      font-size: 1.05rem;
+      margin-bottom: 2rem;
+      max-width: 600px;
     }
 
     .rsvp-options {
       display: flex;
       flex-direction: column;
-      gap: 0;
+      gap: 0.6rem;
+      position: relative;
     }
 
-    .rsvp-option {
+    .rsvp-opt {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius);
+      padding: 1.2rem 1.5rem;
       width: 100%;
-      background: none;
-      border: none;
-      border-bottom: 1px solid #3D332A;
-      padding: 1.6rem 0;
       text-align: left;
       cursor: pointer;
-      font-family: var(--serif);
-      color: #ECE5D8;
-      display: grid;
-      grid-template-columns: 50px 1fr;
-      align-items: baseline;
-      gap: 1.5rem;
-      transition: background 0.2s ease, padding 0.2s ease;
-    }
-
-    .rsvp-option:last-child { border-bottom: none; }
-
-    .rsvp-option:hover:not(.disabled) {
-      padding-left: 1rem;
-    }
-
-    .rsvp-option .marker {
+      color: var(--bg);
       font-family: var(--sans);
-      font-size: 0.78rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      color: #6B5D4F;
-      text-transform: uppercase;
-      transition: color 0.2s ease;
+      transition: all 0.25s ease;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
     }
 
-    .rsvp-option:hover:not(.disabled) .marker {
-      color: var(--accent);
+    .rsvp-opt:hover:not(.disabled) {
+      border-color: var(--accent);
+      background: rgba(212, 80, 30, 0.08);
+      transform: translateX(4px);
     }
 
-    .rsvp-option.selected .marker { color: var(--accent); }
-    .rsvp-option.selected .text { color: var(--accent); }
-
-    .rsvp-option .text {
-      font-size: 1.3rem;
-      line-height: 1.35;
+    .rsvp-opt .check {
+      width: 22px;
+      height: 22px;
+      border: 1.5px solid rgba(255,255,255,0.3);
+      border-radius: 50%;
+      flex-shrink: 0;
+      position: relative;
+      transition: all 0.25s ease;
     }
 
-    .rsvp-option .text em {
+    .rsvp-opt:hover:not(.disabled) .check { border-color: var(--accent); }
+
+    .rsvp-opt.selected .check {
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+
+    .rsvp-opt.selected .check::after {
+      content: "";
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -55%) rotate(45deg);
+      width: 5px;
+      height: 9px;
+      border: solid var(--bg);
+      border-width: 0 1.5px 1.5px 0;
+    }
+
+    .rsvp-opt .opt-body {
+      flex: 1;
+    }
+
+    .rsvp-opt .opt-label {
+      font-weight: 500;
+      font-size: 1.05rem;
+      letter-spacing: -0.01em;
       display: block;
+      margin-bottom: 0.15rem;
+    }
+
+    .rsvp-opt .opt-sub {
       font-family: var(--serif);
       font-style: italic;
-      font-size: 1.05rem;
-      color: #A89B8C;
-      margin-top: 0.3rem;
-      font-weight: 300;
+      font-size: 0.9rem;
+      color: var(--fg-5);
+      font-weight: 400;
     }
 
-    .rsvp-option.disabled {
+    .rsvp-opt.disabled {
+      opacity: 0.35;
       cursor: not-allowed;
-      opacity: 0.4;
     }
 
-    .rsvp-option.disabled .marker {
-      text-decoration: line-through;
-    }
+    .rsvp-opt.disabled .opt-label { text-decoration: line-through; }
 
     .rsvp-disclaimer {
+      margin-top: 1.5rem;
       font-family: var(--serif);
       font-style: italic;
-      font-size: 1rem;
-      color: #6B5D4F;
-      margin-top: 2rem;
+      color: var(--fg-5);
+      font-size: 0.92rem;
       text-align: right;
     }
 
-    .response {
+    .response-card {
       display: none;
-      margin-top: 3rem;
-      padding: 2rem;
+      margin-top: 1.5rem;
+      padding: 1.5rem 1.75rem;
       border: 1px solid var(--accent);
-      animation: fadeIn 0.5s ease-out;
+      border-radius: var(--radius);
+      background: rgba(212, 80, 30, 0.08);
+      animation: fadeUp 0.5s ease-out;
     }
-    .response.show { display: block; }
-    .response p {
-      font-family: var(--display);
-      font-size: 1.5rem;
+    .response-card.show { display: block; }
+    .response-card p {
+      font-family: var(--serif);
       font-style: italic;
-      color: #ECE5D8;
+      font-size: 1.2rem;
+      color: var(--bg);
       margin: 0;
+      max-width: 100%;
     }
-    .response .small {
-      font-family: var(--sans);
-      font-size: 0.78rem;
-      letter-spacing: 0.12em;
+    .response-card .small {
+      display: block;
+      font-family: var(--mono);
+      font-size: var(--t-mono);
+      letter-spacing: 0.04em;
       text-transform: uppercase;
       color: var(--accent);
-      margin-top: 1rem;
-      display: block;
+      font-style: normal;
+      margin-top: 0.6rem;
     }
 
-    @keyframes fadeIn {
+    @keyframes fadeUp {
       from { opacity: 0; transform: translateY(8px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    @media (max-width: 600px) {
-      .rsvp-option { grid-template-columns: 1fr; gap: 0.5rem; }
-      .rsvp-option .text { font-size: 1.15rem; }
+    .closing-note {
+      text-align: center;
+      padding: 3rem 0 1rem;
+    }
+    .closing-note p {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: clamp(1.3rem, 2.5vw, 1.7rem);
+      color: var(--fg-3);
+      max-width: 600px;
+      margin: 0 auto;
     }
   </style>
 </head>
 <body>
 
-  <header class="masthead">
-    <div class="left">No. 04</div>
-    <a href="../index.html" class="title">Thank You, Ghungroo</a>
-    <div class="right">The Question</div>
-  </header>
+  <div class="nav-wrap">
+    <nav class="nav">
+      <a href="../index.html" class="nav-logo">
+        <span class="dot"></span>
+        <span>Thank You, Ghungroo</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="about-you.html">On You</a></li>
+        <li><a href="my-intent.html">My Intent</a></li>
+        <li><a href="visa.html">The H-4 Bit</a></li>
+        <li><a href="the-path.html">The Path</a></li>
+        <li><a href="date.html">A Date?</a></li>
+      </ul>
+    </nav>
+  </div>
 
-  <nav class="nav">
-    <a href="../index.html">Cover</a>
-    <a href="about-you.html">On You</a>
-    <a href="my-intent.html">My Intent</a>
-    <a href="the-practical.html">The Practical Half</a>
-    <a href="date.html">The Question</a>
-  </nav>
-
-  <article>
-    <header class="article-header">
-      <div class="kicker">Essay No. 04 — The Last One</div>
-      <h1>Will you go on a date with me?</h1>
-      <p class="deck">
-        Late July through the end of August. Pune. Pick the day; I'll handle the rest.
+  <main>
+    <section class="article-hero">
+      <span class="eyebrow"><span class="dot"></span>Chapter 05 — The Last One</span>
+      <h1>Will you go on a date <br/><span class="serif">with me?</span></h1>
+      <p class="lead">
+        Late July through the end of August. Pune. Pick the day; I'll handle the rest. The four chapters before this were all build-up. This is the actual page.
       </p>
-    </header>
+    </section>
 
-    <div class="body-text">
-      <p>
-        We've talked nearly every day for two months. We've covered childhood, careers, ambitions,
-        anxieties, parents, food, festivals, the small absurd things that make up a person. It
-        has been — by a wide margin — the best thing about this arranged-marriage process for me.
-        And I'd very much like to meet you in person before we decide anything else.
-      </p>
+    <section class="article-content">
 
       <p>
-        Hence: this site. And hence, this page.
+        We've talked nearly every day for two months. We've covered childhood, careers,
+        ambitions, anxieties, parents, food, festivals, the small absurd things that make up a
+        person. It has been — by a wide margin — the best thing about this arranged-marriage
+        process for me.
       </p>
 
-      <div class="rsvp">
-        <div class="rsvp-label">RSVP — kindly select one</div>
-        <h3>How shall we record your response?</h3>
+      <p>
+        And I'd very much like to meet you in person before we decide anything else. Hence
+        this site. Hence this page. Hence the question.
+      </p>
+
+      <h2>The proposal, in plain terms.</h2>
+
+      <div class="date-facts">
+        <div class="date-fact">
+          <div class="icon">◐</div>
+          <div class="lbl">When</div>
+          <div class="val">Late July → August end, 2026</div>
+        </div>
+        <div class="date-fact">
+          <div class="icon">◉</div>
+          <div class="lbl">Where</div>
+          <div class="val">Pune. Your call on the spot.</div>
+        </div>
+        <div class="date-fact">
+          <div class="icon">◑</div>
+          <div class="lbl">Vibes</div>
+          <div class="val">Easy. No relatives. No pressure.</div>
+        </div>
+      </div>
+
+      <p>
+        I'll be flying down for a couple of weeks. The week is open, the schedule is flexible,
+        the budget is yours. If you'd like to do a long lunch, a long dinner, a long walk, a
+        long anything — I'm in. If you'd rather start with something short and low-stakes, also
+        in. If you'd like your parents to be part of the meeting in some way, also in. Your call.
+      </p>
+
+      <div class="rsvp-block">
+        <span class="rsvp-eyebrow">RSVP — kindly select one</span>
+        <h2>How shall we <span class="serif">record your response?</span></h2>
+        <p>Click an option. Screenshot the result. Send it back. Done.</p>
 
         <div class="rsvp-options">
-          <button class="rsvp-option" data-response="yes">
-            <span class="marker">i.</span>
-            <span class="text">
-              Yes, obviously.
-              <em>Pick a date — surprise me with the place.</em>
+          <button class="rsvp-opt" data-response="yes">
+            <span class="check"></span>
+            <span class="opt-body">
+              <span class="opt-label">Yes, obviously.</span>
+              <span class="opt-sub">Pick a date — surprise me with the place.</span>
             </span>
           </button>
 
-          <button class="rsvp-option" data-response="yes-picky">
-            <span class="marker">ii.</span>
-            <span class="text">
-              Yes — but I am picking the restaurant.
-              <em>I don't trust your taste yet, frankly.</em>
+          <button class="rsvp-opt" data-response="yes-picky">
+            <span class="check"></span>
+            <span class="opt-body">
+              <span class="opt-label">Yes — but I'm picking the restaurant.</span>
+              <span class="opt-sub">I don't trust your taste yet, frankly.</span>
             </span>
           </button>
 
-          <button class="rsvp-option disabled" disabled>
-            <span class="marker">iii.</span>
-            <span class="text" style="text-decoration: line-through; color: #6B5D4F;">
-              No.
-              <em style="text-decoration: line-through;">This option is, regrettably, unavailable.</em>
+          <button class="rsvp-opt disabled" disabled>
+            <span class="check"></span>
+            <span class="opt-body">
+              <span class="opt-label">No.</span>
+              <span class="opt-sub">This option is, regrettably, unavailable.</span>
             </span>
           </button>
         </div>
 
-        <div class="rsvp-disclaimer">— Disclaimer: God's plan ahe he.</div>
+        <div class="rsvp-disclaimer">— Disclaimer: God's plan ahe he 🙈</div>
 
-        <div class="response" id="response">
+        <div class="response-card" id="response">
           <p id="response-text"></p>
-          <span class="small">→ screenshot and send back</span>
+          <span class="small">→ Screenshot and send back</span>
         </div>
       </div>
 
-      <div class="dinkus">⁂</div>
+      <h2>A few honest expectations.</h2>
 
-      <p>
-        Dress code: whatever you want. Vibes: easy. Plans flexible around your schedule, your
-        family, and any meeting your parents would like to be part of. The one expectation:
-        please laugh at at least forty percent of my jokes. It's about average.
-      </p>
+      <div class="cards-stack">
+        <div class="stack-card" data-num="01">
+          <h3>Dress code: whatever you want.</h3>
+          <p>
+            I don't have a preference and I don't trust anyone who does on a first date. Come
+            comfortable. Come like yourself. The point is meeting you, not auditioning the version
+            of you that fits a dress code.
+          </p>
+        </div>
 
-      <p style="font-family: var(--display); font-style: italic; font-size: 1.5rem; color: #ECE5D8; margin-top: 3rem; max-width: 600px;">
-        That's the whole site. Thank you for reading every word.
-      </p>
-    </div>
+        <div class="stack-card" data-num="02">
+          <h3>I'll probably be slightly nervous.</h3>
+          <p>
+            Fair warning. The over-performing politeness from Promise No. 04 may make a brief return.
+            Be patient with me for the first ten minutes. By minute eleven I'll have figured out
+            that you're, in fact, a normal human being and I'll relax.
+          </p>
+        </div>
 
-    <div class="page-end">
-      <div class="pages">
-        <a href="the-practical.html" class="prev">
-          <span class="dir">Previous</span>
-          <span class="ttl"><span class="arrow">←</span> The Practical Half</span>
-        </a>
-        <a href="../index.html" class="next">
-          <span class="dir">Back to</span>
-          <span class="ttl">Cover <span class="arrow">→</span></span>
-        </a>
+        <div class="stack-card" data-num="03">
+          <h3>Please laugh at at least 40% of my jokes.</h3>
+          <p>
+            This is the only firm expectation. Forty percent is generous; my actual hit rate is
+            closer to twenty-five. But the social contract requires a buffer.
+          </p>
+        </div>
       </div>
-      <div class="colophon">— Fin —</div>
-    </div>
-  </article>
+
+      <div class="quote-mark">
+        <blockquote>
+          Two months of text. One evening in person. That's all I'm asking for — to find out if the conversations we've been having translate into the same easiness when there's no screen in the way.
+        </blockquote>
+        <cite>— The whole ask</cite>
+      </div>
+
+      <div class="closing-note">
+        <p>That's the site. Thanks for reading every word of it.</p>
+      </div>
+
+    </section>
+
+    <nav class="page-nav">
+      <a href="the-path.html">
+        <span class="dir">← Previous</span>
+        <span class="title">The Path</span>
+      </a>
+      <a href="../index.html" class="next">
+        <span class="dir">Back to →</span>
+        <span class="title">Home</span>
+      </a>
+    </nav>
+  </main>
+
+  <footer>
+    <p class="sig">— Fin —</p>
+    <p class="meta">Chapter 5 of 5 · Made for you</p>
+  </footer>
 
   <script src="../assets/script.js"></script>
   <script>
-    const options = document.querySelectorAll(".rsvp-option:not(.disabled)");
+    const options = document.querySelectorAll(".rsvp-opt:not(.disabled)");
     const response = document.getElementById("response");
     const responseText = document.getElementById("response-text");
     const responses = {
-      "yes": "Yes, noted. The day is yours to choose; the rest is mine to plan.",
+      "yes": "Yes received. The day is yours to choose; the rest is mine to plan.",
       "yes-picky": "Excellent — I bring the company, you bring the menu. We have a deal."
     };
     options.forEach((opt) => {

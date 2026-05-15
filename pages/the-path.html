@@ -6,165 +6,177 @@
   <title>The Path · Thank You, Ghungroo</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Caveat:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/styles.css" />
-  <style>
-    .path-block {
-      margin: 2.5rem 0;
-    }
-    .path-block h3 {
-      font-family: var(--font-display);
-      font-weight: 400;
-      font-size: 1.6rem;
-      margin-bottom: 1.25rem;
-    }
-    .path-a h3 { color: var(--terracotta); }
-    .path-b h3 { color: var(--sage); }
-    .timeline-step.sage .stage { color: var(--sage); }
-    .timeline.sage .timeline-step:not(:last-child)::after { color: var(--sage); }
-    .summary-card {
-      background: var(--ink);
-      color: var(--paper);
-      padding: 2rem 2.5rem;
-      border-radius: var(--radius);
-      margin: 3rem 0 0;
-      font-family: var(--font-display);
-      font-size: 1.4rem;
-      line-height: 1.4;
-    }
-    .summary-card .accent { color: var(--gold-light); }
-    .month-pill {
-      display: inline-block;
-      background: var(--terracotta);
-      color: var(--paper);
-      font-family: var(--font-body);
-      font-weight: 600;
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 0.25rem 0.65rem;
-      border-radius: 999px;
-      margin-bottom: 0.75rem;
-    }
-  </style>
 </head>
 <body>
 
-  <nav class="nav">
-    <div class="nav-inner">
+  <div class="nav-wrap">
+    <nav class="nav">
       <a href="../index.html" class="nav-logo">
-        <span class="bell">🔔</span>
+        <span class="dot"></span>
         <span>Thank You, Ghungroo</span>
       </a>
       <button class="nav-toggle" aria-label="Toggle menu">☰</button>
       <ul class="nav-links">
         <li><a href="../index.html">Home</a></li>
-        <li><a href="about-you.html">About You</a></li>
+        <li><a href="about-you.html">On You</a></li>
         <li><a href="my-intent.html">My Intent</a></li>
         <li><a href="visa.html">The H-4 Bit</a></li>
-        <li><a href="your-channel.html">Your Channel</a></li>
-        <li><a href="studies.html">Studies</a></li>
         <li><a href="the-path.html">The Path</a></li>
         <li><a href="date.html">A Date?</a></li>
       </ul>
-    </div>
-  </nav>
+    </nav>
+  </div>
 
-  <article class="page page-wide">
-    <span class="eyebrow">06 · The Path</span>
-    <h1>Your roadmap to working freely — two parallel paths</h1>
-    <p class="subtitle">
-      Beauty of this: you can run both at the same time.
-    </p>
+  <main>
+    <section class="article-hero">
+      <span class="eyebrow"><span class="dot"></span>Chapter 04 — The Path</span>
+      <h1>Two roads to working freely, <br/><span class="serif">running in parallel.</span></h1>
+      <p class="lead">
+        You have not one but two independent paths to the same destination. They run side by side. You can travel both at once. No path closes off another.
+      </p>
+    </section>
 
-    <div class="path-block path-a">
-      <h3>Path A — The EAD route (via my green card process)</h3>
+    <section class="article-content">
+
+      <h2>Path A — The EAD route.</h2>
+      <p>
+        This is the path tied to my green-card progress. You arrive on H-4. We wait for my I-140
+        to approve. You apply for the H-4 EAD. Once it lands, you can work, freelance, monetize,
+        hire, sell — anything.
+      </p>
+
       <div class="timeline">
-        <div class="timeline-step">
-          <div class="stage">H-4</div>
-          <div class="meta">You arrive</div>
+        <div class="tl-step">
+          <div class="tl-num">Step 01</div>
+          <div class="tl-name">H-4 Arrival</div>
+          <div class="tl-meta">Day one</div>
         </div>
-        <div class="timeline-step">
-          <div class="stage">I-140 approved</div>
-          <div class="meta">Approx 1–2 yrs</div>
+        <div class="tl-step">
+          <div class="tl-num">Step 02</div>
+          <div class="tl-name">I-140 Approved</div>
+          <div class="tl-meta">1–2 years</div>
         </div>
-        <div class="timeline-step">
-          <div class="stage">Apply H-4 EAD</div>
-          <div class="meta">60–90 days processing</div>
+        <div class="tl-step">
+          <div class="tl-num">Step 03</div>
+          <div class="tl-name">Apply H-4 EAD</div>
+          <div class="tl-meta">60–90 days</div>
         </div>
-        <div class="timeline-step">
-          <div class="stage">Work freely</div>
-          <div class="meta">Any job, any business</div>
+        <div class="tl-step">
+          <div class="tl-num">Step 04</div>
+          <div class="tl-name">Work Freely</div>
+          <div class="tl-meta">Any job, anywhere</div>
         </div>
       </div>
-    </div>
 
-    <div class="path-block path-b">
-      <h3>Path B — The student route (independent of my timeline)</h3>
-      <div class="timeline sage">
-        <div class="timeline-step sage">
-          <div class="stage">H-4</div>
-          <div class="meta">You arrive</div>
-        </div>
-        <div class="timeline-step sage">
-          <div class="stage">Enroll in college</div>
-          <div class="meta">In-state tuition</div>
-        </div>
-        <div class="timeline-step sage">
-          <div class="stage">Switch to F-1</div>
-          <div class="meta">Final semester</div>
-        </div>
-        <div class="timeline-step sage">
-          <div class="stage">OPT → Job</div>
-          <div class="meta">12 or 36 months</div>
-        </div>
-      </div>
-    </div>
+      <h2>Path B — The student route.</h2>
+      <p>
+        This is the path entirely independent of my timeline. You arrive on H-4. You apply to a
+        program for the next intake. You establish state residency for in-state tuition. You
+        enroll. In your final semester, you switch to F-1. Graduation hands you OPT — twelve
+        months, or thirty-six if STEM. From there, an employer can sponsor your own H-1B.
+      </p>
 
-    <div class="summary-card">
-      The beautiful thing: <span class="accent">you can run BOTH paths at the same time.</span>
-      Channel + studies + waiting for EAD, all in parallel. No path closes off another.
-    </div>
+      <div class="timeline">
+        <div class="tl-step">
+          <div class="tl-num">Step 01</div>
+          <div class="tl-name">H-4 Arrival</div>
+          <div class="tl-meta">Day one</div>
+        </div>
+        <div class="tl-step">
+          <div class="tl-num">Step 02</div>
+          <div class="tl-name">Enroll</div>
+          <div class="tl-meta">In-state tuition</div>
+        </div>
+        <div class="tl-step">
+          <div class="tl-num">Step 03</div>
+          <div class="tl-name">Switch to F-1</div>
+          <div class="tl-meta">Final semester</div>
+        </div>
+        <div class="tl-step">
+          <div class="tl-num">Step 04</div>
+          <div class="tl-name">OPT → Job</div>
+          <div class="tl-meta">12 or 36 months</div>
+        </div>
+      </div>
 
-    <h2>A possible first year — just to make it concrete</h2>
+      <div class="quote-mark">
+        <blockquote>
+          The point isn't to pick the right path. The point is that we have two of them, and they reinforce each other if we walk them together.
+        </blockquote>
+        <cite>— Why this matters</cite>
+      </div>
 
-    <div class="card-grid cols-2">
-      <div class="card">
-        <span class="month-pill">Months 1–3</span>
-        <h3>Settling in</h3>
-        <p>Arrive on H-4, get SSN/ITIN. Driver's license, bank account. Start channel research and first US-based videos. Scope out colleges + programs.</p>
+      <h2>A possible first year, just to make it concrete.</h2>
+      <p>
+        Here's what twelve months might look like, broken into quarters. Adjust the channel
+        cadence, school cadence, and travel cadence to taste.
+      </p>
+
+      <div class="cards-stack">
+        <div class="stack-card" data-num="Q1 · Months 1–3">
+          <h3>Settling in.</h3>
+          <p>
+            Arrive on H-4. SSN or ITIN. Driver's license. Bank accounts. First videos shot in
+            your new kitchen. Scout colleges and programs. Discover your new neighborhood. Find a
+            grocery store that stocks the right kind of rice.
+          </p>
+        </div>
+
+        <div class="stack-card" data-num="Q2 · Months 4–6">
+          <h3>Building.</h3>
+          <p>
+            Apply to a program for the next intake. Channel: consistent upload schedule.
+            Establish state residency formally. Weekends spent exploring the country — short
+            trips, long drives, the kind of America that doesn't make it onto Instagram.
+          </p>
+        </div>
+
+        <div class="stack-card" data-num="Q3 · Months 7–9">
+          <h3>Studying and creating.</h3>
+          <p>
+            Coursework begins if admitted. Channel growing, monetization still off. Network with
+            other Indian creators in the US. The first time someone you don't know recognizes you
+            at a desi grocery store.
+          </p>
+        </div>
+
+        <div class="stack-card" data-num="Q4 · Months 10–12">
+          <h3>Unlocking.</h3>
+          <p>
+            I-140 likely approved around here. Apply for H-4 EAD immediately. Channel
+            monetization flips on. The two years of audience-building start paying. Future you,
+            unobstructed.
+          </p>
+        </div>
       </div>
-      <div class="card">
-        <span class="month-pill">Months 4–6</span>
-        <h3>Building</h3>
-        <p>Apply to a program for next intake. Channel: consistent uploads. Establish state residency for in-state tuition. Travel weekends — explore the US together.</p>
+
+      <div class="callout">
+        <p>
+          <strong>None of this is settled.</strong> All of it is workable. The point isn't that
+          I've planned your life — it's that I've thought about it carefully, and the answers
+          I've found make me more confident, not less, that this is a good move for both of us.
+        </p>
       </div>
-      <div class="card">
-        <span class="month-pill">Months 7–9</span>
-        <h3>Studying + creating</h3>
-        <p>Start coursework if admitted. Channel growing — keep monetization off. Network with other Indian creators in the US.</p>
-      </div>
-      <div class="card">
-        <span class="month-pill">Months 10–12</span>
-        <h3>Unlocking</h3>
-        <p>I-140 likely approved around here. Apply for H-4 EAD immediately. Channel monetization switches on. Future you = unstoppable.</p>
-      </div>
-    </div>
+
+    </section>
 
     <nav class="page-nav">
-      <a href="studies.html" class="prev">
-        <span class="dir">← previous</span>
-        <span class="title">Studies</span>
+      <a href="visa.html">
+        <span class="dir">← Previous</span>
+        <span class="title">The H-4 Bit</span>
       </a>
       <a href="date.html" class="next">
-        <span class="dir">finally →</span>
+        <span class="dir">Finally →</span>
         <span class="title">A Date?</span>
       </a>
     </nav>
-  </article>
+  </main>
 
-  <footer class="foot">
-    <p>page 6 of 7 · the boring stuff is over, promise</p>
+  <footer>
+    <p class="sig">Chapter 4 of 5</p>
+    <p class="meta">— The boring half is done —</p>
   </footer>
 
   <script src="../assets/script.js"></script>
