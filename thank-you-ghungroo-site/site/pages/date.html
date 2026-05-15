@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Date? · Thank You, Ghungroo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Caveat:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <style>
+    body {
+      background: var(--ink);
+      color: var(--paper);
+    }
+    /* Re-color nav for dark page */
+    .nav {
+      background: rgba(61, 31, 31, 0.85);
+      border-bottom-color: rgba(251, 246, 238, 0.1);
+    }
+    .nav-logo, .nav-links a { color: var(--paper-warm); }
+    .nav-links a.active { color: var(--gold-light); }
+    .nav-toggle { color: var(--paper); }
+    .nav-links { background: var(--ink); }
+
+    .page { padding-top: 4rem; }
+
+    .eyebrow {
+      color: var(--gold-light);
+      font-family: var(--font-body);
+    }
+
+    h1 {
+      color: var(--paper);
+      font-size: clamp(2.8rem, 7vw, 5rem);
+      line-height: 1;
+    }
+
+    .subtitle {
+      color: var(--paper-warm);
+      font-size: 1.3rem;
+    }
+
+    .date-context {
+      font-family: var(--font-hand);
+      font-size: 1.5rem;
+      color: var(--gold-light);
+      margin: 3rem 0 1rem;
+      transform: rotate(-1deg);
+      display: inline-block;
+    }
+
+    .rsvp-card {
+      background: var(--paper);
+      color: var(--ink);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      margin: 2rem 0 4rem;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+      position: relative;
+    }
+
+    .rsvp-card::before {
+      content: "RSVP";
+      position: absolute;
+      top: -16px;
+      left: 2rem;
+      background: var(--gold);
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      padding: 0.35rem 1rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+    }
+
+    .rsvp-card h2 {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      margin: 0.5rem 0 1.5rem;
+      color: var(--ink);
+    }
+
+    .rsvp-option {
+      width: 100%;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1.1rem 1.25rem;
+      background: white;
+      border: 2px solid rgba(61, 31, 31, 0.1);
+      border-radius: var(--radius-sm);
+      margin-bottom: 0.75rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      text-align: left;
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: var(--ink);
+    }
+
+    .rsvp-option:hover {
+      border-color: var(--terracotta);
+      background: var(--rose-pale);
+      transform: translateX(4px);
+    }
+
+    .rsvp-option.disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+      background: #F0EAE0;
+    }
+
+    .rsvp-option.disabled:hover {
+      transform: none;
+      border-color: rgba(61, 31, 31, 0.1);
+      background: #F0EAE0;
+    }
+
+    .rsvp-option.selected {
+      border-color: var(--terracotta);
+      background: var(--rose-pale);
+      box-shadow: 0 4px 14px rgba(200, 75, 49, 0.2);
+    }
+
+    .rsvp-radio {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      border: 2px solid var(--terracotta);
+      flex-shrink: 0;
+      margin-top: 0.15rem;
+      position: relative;
+      transition: all 0.2s ease;
+    }
+
+    .rsvp-option.selected .rsvp-radio::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--terracotta);
+    }
+
+    .rsvp-option.disabled .rsvp-radio {
+      border-color: var(--ink-muted);
+      background: #ddd;
+    }
+
+    .rsvp-text strong {
+      font-weight: 600;
+      color: var(--ink);
+      display: block;
+      margin-bottom: 0.15rem;
+    }
+
+    .rsvp-text span {
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+    }
+
+    .rsvp-option.disabled .rsvp-text strong,
+    .rsvp-option.disabled .rsvp-text span {
+      color: var(--ink-muted);
+    }
+
+    .rsvp-foot {
+      margin-top: 1.5rem;
+      font-family: var(--font-hand);
+      font-size: 1.3rem;
+      color: var(--terracotta);
+      text-align: center;
+    }
+
+    .response {
+      display: none;
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background: var(--sage);
+      color: var(--paper);
+      border-radius: var(--radius);
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      text-align: center;
+      animation: fadeUp 0.5s ease-out;
+    }
+    .response.show { display: block; }
+    .response .small {
+      font-family: var(--font-hand);
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
+      display: block;
+    }
+
+    .date-info {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin: 3rem 0 2rem;
+    }
+
+    .date-info div {
+      background: rgba(251, 246, 238, 0.06);
+      border: 1px solid rgba(251, 246, 238, 0.1);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+    }
+
+    .date-info .key {
+      font-family: var(--font-body);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      font-size: 0.7rem;
+      color: var(--gold-light);
+      margin-bottom: 0.5rem;
+    }
+
+    .date-info .val {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      color: var(--paper);
+    }
+
+    .foot { color: var(--paper-warm); border-color: rgba(251, 246, 238, 0.15); }
+    .foot p { color: var(--gold-light); }
+
+    .page-nav { border-color: rgba(251, 246, 238, 0.15); }
+    .page-nav a {
+      background: rgba(251, 246, 238, 0.04);
+      color: var(--paper-warm);
+      border-color: rgba(251, 246, 238, 0.1);
+    }
+    .page-nav .dir { color: var(--gold-light); }
+    .page-nav .title { color: var(--paper); }
+    .page-nav a:hover {
+      background: rgba(200, 75, 49, 0.15);
+      border-color: var(--terracotta);
+      color: var(--paper);
+    }
+
+    @media (max-width: 768px) {
+      .date-info { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <span class="bell">🔔</span>
+        <span>Thank You, Ghungroo</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="about-you.html">About You</a></li>
+        <li><a href="my-intent.html">My Intent</a></li>
+        <li><a href="visa.html">The H-4 Bit</a></li>
+        <li><a href="your-channel.html">Your Channel</a></li>
+        <li><a href="studies.html">Studies</a></li>
+        <li><a href="the-path.html">The Path</a></li>
+        <li><a href="date.html">A Date?</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <article class="page">
+    <span class="eyebrow">07 · The Actual Reason</span>
+    <h1>Will you go on a date with me?</h1>
+
+    <span class="date-context">made it through six pages of build-up. respect.</span>
+    <p class="subtitle">
+      Late July to end of August. Pune. Pick the day, I'll handle everything else.
+    </p>
+
+    <div class="date-info">
+      <div>
+        <div class="key">When</div>
+        <div class="val">Late July → August end</div>
+      </div>
+      <div>
+        <div class="key">Where</div>
+        <div class="val">Pune. Your call on the spot.</div>
+      </div>
+      <div>
+        <div class="key">Vibe</div>
+        <div class="val">Easy. No relatives.</div>
+      </div>
+    </div>
+
+    <div class="rsvp-card">
+      <h2>Pick one (legally binding)</h2>
+
+      <button class="rsvp-option" data-response="yes">
+        <span class="rsvp-radio"></span>
+        <span class="rsvp-text">
+          <strong>Yes, obviously.</strong>
+          <span>Pick a date, surprise me with the place.</span>
+        </span>
+      </button>
+
+      <button class="rsvp-option" data-response="yes-picky">
+        <span class="rsvp-radio"></span>
+        <span class="rsvp-text">
+          <strong>Yes, but I'm picking the restaurant.</strong>
+          <span>I don't trust your taste yet.</span>
+        </span>
+      </button>
+
+      <button class="rsvp-option disabled" disabled>
+        <span class="rsvp-radio"></span>
+        <span class="rsvp-text">
+          <strong>No.</strong>
+          <span>[option not currently available]</span>
+        </span>
+      </button>
+
+      <div class="rsvp-foot">Disclaimer: God's plan ahe he. 🙈</div>
+
+      <div class="response" id="response">
+        <span id="response-text"></span>
+        <span class="small">screenshot karun whatsapp kar 😬</span>
+      </div>
+    </div>
+
+    <p style="font-family: var(--font-hand); font-size: 1.3rem; color: var(--gold-light); text-align: center;">
+      Dress code: whatever you want. Vibes: easy.<br/>
+      Expectations: please laugh at at least 40% of my jokes.
+    </p>
+
+    <nav class="page-nav">
+      <a href="the-path.html" class="prev">
+        <span class="dir">← previous</span>
+        <span class="title">The Path</span>
+      </a>
+      <a href="../index.html" class="next">
+        <span class="dir">back to →</span>
+        <span class="title">Home</span>
+      </a>
+    </nav>
+  </article>
+
+  <footer class="foot">
+    <p>that's it. that's the site. thanks for reading every word.</p>
+    <p class="small">made with care, just for you. ❤️</p>
+  </footer>
+
+  <script src="../assets/script.js"></script>
+  <script>
+    // Interactive RSVP
+    const options = document.querySelectorAll(".rsvp-option:not(.disabled)");
+    const response = document.getElementById("response");
+    const responseText = document.getElementById("response-text");
+
+    const responses = {
+      "yes": "Yes received. Day mhntelis ki ticket book karto. 🥹",
+      "yes-picky": "Noted: I bring the company, you bring the menu. Done deal. 🤝"
+    };
+
+    options.forEach((opt) => {
+      opt.addEventListener("click", () => {
+        options.forEach((o) => o.classList.remove("selected"));
+        opt.classList.add("selected");
+        const r = opt.dataset.response;
+        responseText.textContent = responses[r];
+        response.classList.add("show");
+      });
+    });
+  </script>
+</body>
+</html>

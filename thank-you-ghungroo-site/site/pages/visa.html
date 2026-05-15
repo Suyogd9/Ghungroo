@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The H-4 Bit · Thank You, Ghungroo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Caveat:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/styles.css" />
+  <style>
+    .definition {
+      background: var(--terracotta);
+      color: var(--paper);
+      padding: 2rem 2.5rem;
+      border-radius: var(--radius);
+      margin: 2rem 0 3rem;
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      line-height: 1.4;
+      box-shadow: 0 8px 24px rgba(200, 75, 49, 0.2);
+    }
+    .can-cant {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin: 2.5rem 0;
+    }
+    .can-cant > div {
+      background: white;
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      border: 1px solid rgba(61, 31, 31, 0.08);
+      border-top: 4px solid;
+    }
+    .can { border-top-color: var(--sage); }
+    .cant { border-top-color: var(--terracotta); }
+    .unlock { border-top-color: var(--gold); }
+    .can h3 { color: var(--sage); }
+    .cant h3 { color: var(--terracotta); }
+    .unlock h3 { color: #B8893D; }
+    .can-cant h3 {
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 1.05rem;
+      margin-bottom: 1rem;
+    }
+    .can-cant ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .can-cant li {
+      padding: 0.35rem 0 0.35rem 1.2rem;
+      position: relative;
+      font-size: 0.94rem;
+      color: var(--ink-soft);
+    }
+    .can li::before { content: "✓"; position: absolute; left: 0; color: var(--sage); font-weight: bold; }
+    .cant li::before { content: "✗"; position: absolute; left: 0; color: var(--terracotta); font-weight: bold; }
+    .unlock li::before { content: "→"; position: absolute; left: 0; color: var(--gold); font-weight: bold; }
+    @media (max-width: 768px) {
+      .can-cant { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <span class="bell">🔔</span>
+        <span>Thank You, Ghungroo</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="about-you.html">About You</a></li>
+        <li><a href="my-intent.html">My Intent</a></li>
+        <li><a href="visa.html">The H-4 Bit</a></li>
+        <li><a href="your-channel.html">Your Channel</a></li>
+        <li><a href="studies.html">Studies</a></li>
+        <li><a href="the-path.html">The Path</a></li>
+        <li><a href="date.html">A Date?</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <article class="page page-wide">
+    <span class="eyebrow">03 · The H-4 Bit</span>
+    <h1>The visa thing, in plain English</h1>
+    <p class="subtitle">
+      Tu mhntalis "bhai he sagle maza dokyavarun jaate" — same thing happens to most people.
+      Let me explain it like we're at a chai stall, not a lawyer's office.
+    </p>
+
+    <div class="sticky-note">
+      I'll keep all the lawyer-confirming for our actual lawyer.<br/>
+      This is just so you have the lay of the land. 🗺️
+    </div>
+
+    <h2>My situation, so the rest makes sense</h2>
+
+    <div class="info-row">
+      <div class="label">Right now</div>
+      <div class="value">
+        <strong>H-1B (work visa).</strong> This is my legal status in the US. Your H-4 will be linked to this — you're a "dependent" on my status.
+      </div>
+    </div>
+    <div class="info-row">
+      <div class="label">Started Feb 2026</div>
+      <div class="value">
+        <strong>I-140: PWD step.</strong> PWD = Prevailing Wage Determination. It's step 1 of the green card process.
+        Order: PWD → PERM → I-140 filing → I-140 approval. Usually takes 1–2 years total.
+      </div>
+    </div>
+    <div class="info-row">
+      <div class="label">After I-140</div>
+      <div class="value">
+        <strong>You unlock H-4 EAD.</strong> Once my I-140 is approved, you become eligible for an H-4 EAD (work permit).
+        Until then, H-4 has work restrictions — but plenty of options. Details below.
+      </div>
+    </div>
+
+    <h2>What is an H-4 visa, actually?</h2>
+
+    <div class="definition">
+      It's a "dependent" visa. It lets the spouse of someone on H-1B live legally in the US
+      for the duration of the H-1B holder's stay.
+    </div>
+
+    <div class="can-cant">
+      <div class="can">
+        <h3>You CAN</h3>
+        <ul>
+          <li>Live in the US legally</li>
+          <li>Travel in & out of the country</li>
+          <li>Open a bank account, get an SSN/ITIN</li>
+          <li>Get a driver's license</li>
+          <li>Study full-time or part-time</li>
+          <li>Volunteer (unpaid work)</li>
+        </ul>
+      </div>
+      <div class="cant">
+        <h3>You CANNOT (yet)</h3>
+        <ul>
+          <li>Work for pay in the US</li>
+          <li>Receive paid YouTube revenue while on plain H-4</li>
+          <li>Run a US-registered business as employment</li>
+          <li>Be self-employed for income</li>
+        </ul>
+      </div>
+      <div class="unlock">
+        <h3>The unlock</h3>
+        <ul>
+          <li>After my I-140 is approved, you apply for H-4 EAD</li>
+          <li>EAD = Employment Authorization Document</li>
+          <li>Then: you can work, freelance, monetize, anything</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout">
+      <p>
+        <strong>Not legal advice.</strong> This is my best understanding from research and from my own filings —
+        we'll confirm anything specific with my company's immigration lawyer before any decision or filing.
+      </p>
+    </div>
+
+    <nav class="page-nav">
+      <a href="my-intent.html" class="prev">
+        <span class="dir">← previous</span>
+        <span class="title">My Intent</span>
+      </a>
+      <a href="your-channel.html" class="next">
+        <span class="dir">next →</span>
+        <span class="title">Your Channel</span>
+      </a>
+    </nav>
+  </article>
+
+  <footer class="foot">
+    <p>page 3 of 7 · halfway through the boring bit</p>
+  </footer>
+
+  <script src="../assets/script.js"></script>
+</body>
+</html>
