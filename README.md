@@ -1,61 +1,40 @@
 # Thank You, Ghungroo
 
-A little something I made for you, in code.
+An essay in four parts, set in proper typography.
 
-## Structure
+## Pages
 
 ```
 .
-├── index.html              # Home page (the Ghungroo intro)
+├── index.html                       Cover + contents
 ├── assets/
-│   ├── styles.css          # Design system
-│   └── script.js           # Nav + interactions
+│   ├── styles.css                   Design system (all of it)
+│   └── script.js                    Nav active state
 └── pages/
-    ├── about-you.html      # 01 · About You
-    ├── my-intent.html      # 02 · My Intent
-    ├── visa.html           # 03 · The H-4 Bit
-    ├── your-channel.html   # 04 · Your Channel
-    ├── studies.html        # 05 · Studies
-    ├── the-path.html       # 06 · The Path
-    └── date.html           # 07 · A Date?
+    ├── about-you.html               No. 01 — On You
+    ├── my-intent.html               No. 02 — My Intent
+    ├── the-practical.html           No. 03 — The Practical Half
+    └── date.html                    No. 04 — The Question
 ```
 
-## Deploy to GitHub Pages (free, takes ~5 min)
+## Typography
 
-1. **Create a new repo** on GitHub. Name it whatever — `for-you`, `ghungroo`, or even something neutral like `personal-site`.
+- **Instrument Serif** — display, italic-capable, magazine headers
+- **Source Serif 4** — body, variable opsz, optimized for reading
+- **Inter** — utility, masthead, kickers, small caps
 
-2. **Upload all these files** to the repo (web UI or git). Keep the folder structure exactly as it is.
+All fonts loaded from Google Fonts. No build step.
 
-3. **Enable Pages:** Repo → **Settings** → **Pages** → under "Build and deployment":
-   - Source: **Deploy from a branch**
-   - Branch: **main** / folder: **/ (root)**
-   - Click **Save**
+## Deploy to GitHub Pages
 
-4. Wait 1–2 minutes. Your site will be live at:
-   `https://<your-github-username>.github.io/<repo-name>/`
+1. **Drag everything inside this folder** (not the folder itself) into a GitHub repo
+2. Repo must contain `index.html` at the top level
+3. Settings → Pages → Deploy from branch → `main` → `/ (root)` → Save
+4. Live in 1–2 min at `https://<your-username>.github.io/<repo-name>/`
 
-5. Send her the link. That's it.
+## Before deploying — find & replace these
 
-## Before you deploy — find & replace these placeholders
+- `[Your name]` — none currently in the copy, but check the colophon if you want to add credit
+- The "Pune" and timing details on the date page
 
-- `[Your name]` (in `index.html` footer)
-- `[state]` (in `pages/studies.html` — the state you're in)
-- `[Family situation]` (in `pages/my-intent.html` — replace with the specific family context, or remove)
-
-Use Ctrl/Cmd+Shift+F in VS Code or your editor's project-wide find & replace.
-
-## Run locally first (optional)
-
-```bash
-# any tiny static server works. Examples:
-python3 -m http.server 8000
-# then open http://localhost:8000
-```
-
-## Tech notes
-
-- No build step. No framework. Just HTML, CSS, JS.
-- Fonts loaded from Google Fonts (Caprasimo, Fraunces, Caveat).
-- Fully responsive — works on mobile.
-- The Ghungroo on the home page jingles on hover.
-- The RSVP on the date page is interactive (client-side only — no data is sent anywhere).
+Open in any browser locally to preview — no server required.
