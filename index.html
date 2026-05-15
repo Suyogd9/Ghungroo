@@ -3,78 +3,91 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thank You, Ghungroo · No. 01</title>
-  <meta name="description" content="An essay in five parts. Made for you, by me." />
+  <title>Thank You, Ghungroo</title>
+  <meta name="description" content="A little something I made for you." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,300;1,8..60,400&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/styles.css" />
 </head>
 <body>
 
-  <header class="masthead">
-    <div class="left">Vol. I · No. 1</div>
-    <a href="index.html" class="title">Thank You, Ghungroo</a>
-    <div class="right">Summer · 2026</div>
-  </header>
-
-  <nav class="nav">
-    <a href="index.html">Cover</a>
-    <a href="pages/about-you.html">On You</a>
-    <a href="pages/my-intent.html">My Intent</a>
-    <a href="pages/the-practical.html">The Practical Half</a>
-    <a href="pages/date.html">The Question</a>
-  </nav>
-
-  <section class="cover">
-    <div class="issue">An Essay in Five Parts</div>
-    <h1>Thank you,<br/><span class="italic">Ghungroo.</span></h1>
-    <p class="deck">
-      Somewhere, a pair of ghungroos is taking full credit for our match. They deserve it.
-      What follows is everything I've been wanting to say, organized — for a change — into chapters.
-    </p>
-    <a href="pages/about-you.html" class="cta">
-      Begin reading <span>→</span>
-    </a>
-  </section>
-
-  <section class="contents">
-    <div class="label">Contents</div>
-    <ol>
-      <li>
-        <a href="pages/about-you.html">
-          <span class="n">No. 01</span>
-          <span class="t">On You</span>
-          <span class="sub">Six things I keep coming back to.</span>
-        </a>
-      </li>
-      <li>
-        <a href="pages/my-intent.html">
-          <span class="n">No. 02</span>
-          <span class="t">My Intent</span>
-          <span class="sub">What I'm signing up for, specifically.</span>
-        </a>
-      </li>
-      <li>
-        <a href="pages/the-practical.html">
-          <span class="n">No. 03</span>
-          <span class="t">The Practical Half</span>
-          <span class="sub">Visas, channels, studies, and a map.</span>
-        </a>
-      </li>
-      <li>
-        <a href="pages/date.html">
-          <span class="n">No. 04</span>
-          <span class="t">The Question</span>
-          <span class="sub">The reason this thing exists.</span>
-        </a>
-      </li>
-    </ol>
-  </section>
-
-  <div class="colophon">
-    Set in Instrument Serif & Source Serif 4 · Made by hand, May 2026
+  <div class="nav-wrap">
+    <nav class="nav">
+      <a href="index.html" class="nav-logo">
+        <span class="dot"></span>
+        <span>Thank You, Ghungroo</span>
+      </a>
+      <button class="nav-toggle" aria-label="Toggle menu">☰</button>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="pages/about-you.html">On You</a></li>
+        <li><a href="pages/my-intent.html">My Intent</a></li>
+        <li><a href="pages/visa.html">The H-4 Bit</a></li>
+        <li><a href="pages/the-path.html">The Path</a></li>
+        <li><a href="pages/date.html">A Date?</a></li>
+      </ul>
+    </nav>
   </div>
+
+  <main>
+    <section class="hero">
+      <span class="eyebrow"><span class="dot"></span>An essay in five parts · May 2026</span>
+      <h1>Thank you, <br/><span class="serif accent">Ghungroo.</span></h1>
+      <p class="lead">
+        Somewhere, a pair of ghungroos is taking full credit for our match. They deserve it. What follows is everything I've been wanting to say, organized — for a change — into chapters.
+      </p>
+      <a href="pages/about-you.html" class="btn">
+        Start reading <span class="arrow">→</span>
+      </a>
+    </section>
+
+    <section class="toc">
+      <div class="toc-label">— Contents</div>
+      <ol class="toc-list">
+        <li class="toc-item">
+          <a href="pages/about-you.html">
+            <span class="num">01</span>
+            <span class="title">On You</span>
+            <span class="desc">Six things I keep coming back to.</span>
+          </a>
+        </li>
+        <li class="toc-item">
+          <a href="pages/my-intent.html">
+            <span class="num">02</span>
+            <span class="title">My Intent</span>
+            <span class="desc">What I'm signing up for, specifically.</span>
+          </a>
+        </li>
+        <li class="toc-item">
+          <a href="pages/visa.html">
+            <span class="num">03</span>
+            <span class="title">The H-4 Bit</span>
+            <span class="desc">Visa, channel, and studies — explained.</span>
+          </a>
+        </li>
+        <li class="toc-item">
+          <a href="pages/the-path.html">
+            <span class="num">04</span>
+            <span class="title">The Path</span>
+            <span class="desc">Two parallel roads to working freely.</span>
+          </a>
+        </li>
+        <li class="toc-item">
+          <a href="pages/date.html">
+            <span class="num">05</span>
+            <span class="title">A Date?</span>
+            <span class="desc">The actual reason this exists.</span>
+          </a>
+        </li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <p class="sig">Made with care for you, by hand.</p>
+    <p class="meta">Vol. 01 · No. 01 · 2026</p>
+  </footer>
 
   <script src="assets/script.js"></script>
 </body>

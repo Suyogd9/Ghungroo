@@ -1,40 +1,41 @@
 # Thank You, Ghungroo
 
-An essay in four parts, set in proper typography.
+A site, in five chapters.
 
-## Pages
+## Structure
 
 ```
 .
-├── index.html                       Cover + contents
+├── index.html              # Home
 ├── assets/
-│   ├── styles.css                   Design system (all of it)
-│   └── script.js                    Nav active state
+│   ├── styles.css          # Design system
+│   └── script.js           # Nav + interactions
 └── pages/
-    ├── about-you.html               No. 01 — On You
-    ├── my-intent.html               No. 02 — My Intent
-    ├── the-practical.html           No. 03 — The Practical Half
-    └── date.html                    No. 04 — The Question
+    ├── about-you.html      # 01 — On You
+    ├── my-intent.html      # 02 — My Intent
+    ├── visa.html           # 03 — The H-4 Bit
+    ├── the-path.html       # 04 — The Path
+    └── date.html           # 05 — A Date?
 ```
 
 ## Typography
 
-- **Instrument Serif** — display, italic-capable, magazine headers
-- **Source Serif 4** — body, variable opsz, optimized for reading
-- **Inter** — utility, masthead, kickers, small caps
+- **Geist** (Vercel) — primary UI sans
+- **Newsreader** — italic accents and pull quotes
+- **JetBrains Mono** — utility / mono labels
 
-All fonts loaded from Google Fonts. No build step.
+Loaded from Google Fonts. No build step.
 
 ## Deploy to GitHub Pages
 
-1. **Drag everything inside this folder** (not the folder itself) into a GitHub repo
-2. Repo must contain `index.html` at the top level
-3. Settings → Pages → Deploy from branch → `main` → `/ (root)` → Save
-4. Live in 1–2 min at `https://<your-username>.github.io/<repo-name>/`
+1. Replace your existing repo's files with everything inside this folder
+2. **Important:** `index.html` must be at the top level of the repo (not inside a subfolder)
+3. Settings → Pages → Branch: `main`, Folder: `/ (root)` → Save
+4. Live in 1–2 minutes
 
-## Before deploying — find & replace these
+## Before deploying
 
-- `[Your name]` — none currently in the copy, but check the colophon if you want to add credit
-- The "Pune" and timing details on the date page
+- Search for `Pune` in date.html if you want to change the location
+- Search for `Vol. 01 · No. 01 · 2026` in the home page footer to change the date
 
-Open in any browser locally to preview — no server required.
+Open `index.html` locally in any browser to preview.

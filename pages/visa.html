@@ -6,180 +6,318 @@
   <title>The H-4 Bit · Thank You, Ghungroo</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Caprasimo&family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Caveat:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/styles.css" />
-  <style>
-    .definition {
-      background: var(--terracotta);
-      color: var(--paper);
-      padding: 2rem 2.5rem;
-      border-radius: var(--radius);
-      margin: 2rem 0 3rem;
-      font-family: var(--font-display);
-      font-size: 1.5rem;
-      line-height: 1.4;
-      box-shadow: 0 8px 24px rgba(200, 75, 49, 0.2);
-    }
-    .can-cant {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-      margin: 2.5rem 0;
-    }
-    .can-cant > div {
-      background: white;
-      border-radius: var(--radius);
-      padding: 1.5rem;
-      border: 1px solid rgba(61, 31, 31, 0.08);
-      border-top: 4px solid;
-    }
-    .can { border-top-color: var(--sage); }
-    .cant { border-top-color: var(--terracotta); }
-    .unlock { border-top-color: var(--gold); }
-    .can h3 { color: var(--sage); }
-    .cant h3 { color: var(--terracotta); }
-    .unlock h3 { color: #B8893D; }
-    .can-cant h3 {
-      font-family: var(--font-body);
-      font-weight: 600;
-      font-size: 1.05rem;
-      margin-bottom: 1rem;
-    }
-    .can-cant ul {
-      list-style: none;
-      padding-left: 0;
-    }
-    .can-cant li {
-      padding: 0.35rem 0 0.35rem 1.2rem;
-      position: relative;
-      font-size: 0.94rem;
-      color: var(--ink-soft);
-    }
-    .can li::before { content: "✓"; position: absolute; left: 0; color: var(--sage); font-weight: bold; }
-    .cant li::before { content: "✗"; position: absolute; left: 0; color: var(--terracotta); font-weight: bold; }
-    .unlock li::before { content: "→"; position: absolute; left: 0; color: var(--gold); font-weight: bold; }
-    @media (max-width: 768px) {
-      .can-cant { grid-template-columns: 1fr; }
-    }
-  </style>
 </head>
 <body>
 
-  <nav class="nav">
-    <div class="nav-inner">
+  <div class="nav-wrap">
+    <nav class="nav">
       <a href="../index.html" class="nav-logo">
-        <span class="bell">🔔</span>
+        <span class="dot"></span>
         <span>Thank You, Ghungroo</span>
       </a>
       <button class="nav-toggle" aria-label="Toggle menu">☰</button>
       <ul class="nav-links">
         <li><a href="../index.html">Home</a></li>
-        <li><a href="about-you.html">About You</a></li>
+        <li><a href="about-you.html">On You</a></li>
         <li><a href="my-intent.html">My Intent</a></li>
         <li><a href="visa.html">The H-4 Bit</a></li>
-        <li><a href="your-channel.html">Your Channel</a></li>
-        <li><a href="studies.html">Studies</a></li>
         <li><a href="the-path.html">The Path</a></li>
         <li><a href="date.html">A Date?</a></li>
       </ul>
-    </div>
-  </nav>
+    </nav>
+  </div>
 
-  <article class="page page-wide">
-    <span class="eyebrow">03 · The H-4 Bit</span>
-    <h1>The visa thing, in plain English</h1>
-    <p class="subtitle">
-      Tu mhntalis "bhai he sagle maza dokyavarun jaate" — same thing happens to most people.
-      Let me explain it like we're at a chai stall, not a lawyer's office.
-    </p>
-
-    <div class="sticky-note">
-      I'll keep all the lawyer-confirming for our actual lawyer.<br/>
-      This is just so you have the lay of the land. 🗺️
-    </div>
-
-    <h2>My situation, so the rest makes sense</h2>
-
-    <div class="info-row">
-      <div class="label">Right now</div>
-      <div class="value">
-        <strong>H-1B (work visa).</strong> This is my legal status in the US. Your H-4 will be linked to this — you're a "dependent" on my status.
-      </div>
-    </div>
-    <div class="info-row">
-      <div class="label">Started Feb 2026</div>
-      <div class="value">
-        <strong>I-140: PWD step.</strong> PWD = Prevailing Wage Determination. It's step 1 of the green card process.
-        Order: PWD → PERM → I-140 filing → I-140 approval. Usually takes 1–2 years total.
-      </div>
-    </div>
-    <div class="info-row">
-      <div class="label">After I-140</div>
-      <div class="value">
-        <strong>You unlock H-4 EAD.</strong> Once my I-140 is approved, you become eligible for an H-4 EAD (work permit).
-        Until then, H-4 has work restrictions — but plenty of options. Details below.
-      </div>
-    </div>
-
-    <h2>What is an H-4 visa, actually?</h2>
-
-    <div class="definition">
-      It's a "dependent" visa. It lets the spouse of someone on H-1B live legally in the US
-      for the duration of the H-1B holder's stay.
-    </div>
-
-    <div class="can-cant">
-      <div class="can">
-        <h3>You CAN</h3>
-        <ul>
-          <li>Live in the US legally</li>
-          <li>Travel in & out of the country</li>
-          <li>Open a bank account, get an SSN/ITIN</li>
-          <li>Get a driver's license</li>
-          <li>Study full-time or part-time</li>
-          <li>Volunteer (unpaid work)</li>
-        </ul>
-      </div>
-      <div class="cant">
-        <h3>You CANNOT (yet)</h3>
-        <ul>
-          <li>Work for pay in the US</li>
-          <li>Receive paid YouTube revenue while on plain H-4</li>
-          <li>Run a US-registered business as employment</li>
-          <li>Be self-employed for income</li>
-        </ul>
-      </div>
-      <div class="unlock">
-        <h3>The unlock</h3>
-        <ul>
-          <li>After my I-140 is approved, you apply for H-4 EAD</li>
-          <li>EAD = Employment Authorization Document</li>
-          <li>Then: you can work, freelance, monetize, anything</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="callout">
-      <p>
-        <strong>Not legal advice.</strong> This is my best understanding from research and from my own filings —
-        we'll confirm anything specific with my company's immigration lawyer before any decision or filing.
+  <main>
+    <section class="article-hero">
+      <span class="eyebrow"><span class="dot"></span>Chapter 03 — The H-4 Bit</span>
+      <h1>The boring half, <br/><span class="serif">made less boring.</span></h1>
+      <p class="lead">
+        Visa, channel, studies — explained plainly. You said <em>"bhai he sagle maza dokyavarun jaate"</em> once. This is the version that doesn't.
       </p>
-    </div>
+    </section>
+
+    <section class="article-content">
+
+      <!-- ====== PART 1 — VISA ====== -->
+      <h2>Where I stand, and what it means for you.</h2>
+      <p>
+        Three facts about my situation, then we move on to the interesting parts. Nothing below
+        is legal advice — anything we actually file will go through my company's immigration
+        lawyer first.
+      </p>
+
+      <div class="spec-rows">
+        <div class="spec-row">
+          <div class="k">Right Now</div>
+          <div class="v">
+            <strong>I'm on an H-1B</strong> — a US work visa. Your H-4 will be attached to mine.
+            "Dependent" is the technical word; in practice it means H-1B is the spine and H-4 follows.
+          </div>
+        </div>
+        <div class="spec-row">
+          <div class="k">Feb 2026</div>
+          <div class="v">
+            <strong>I-140 started, currently in PWD.</strong> PWD = Prevailing Wage Determination
+            — step one of the green-card sequence. Full order: PWD → PERM → I-140 filing → I-140
+            approval. One to two years total.
+          </div>
+        </div>
+        <div class="spec-row">
+          <div class="k">The Unlock</div>
+          <div class="v">
+            <strong>Once I-140 is approved, H-4 EAD becomes available.</strong> EAD =
+            Employment Authorization Document. Until then, H-4 has work restrictions. After it,
+            you can do basically anything.
+          </div>
+        </div>
+      </div>
+
+      <h3>The H-4, plainly.</h3>
+      <p>
+        It's a dependent visa. It lets the spouse of someone on H-1B live legally in the US for
+        as long as the H-1B is valid. Specific capabilities and specific restrictions follow.
+      </p>
+
+      <div class="split-grid">
+        <div class="split-card">
+          <span class="tag">What you can do</span>
+          <ul>
+            <li>Live in the US legally, as long as I'm here</li>
+            <li>Travel in and out of the country freely</li>
+            <li>Open bank accounts, get an SSN or ITIN</li>
+            <li>Get a driver's license</li>
+            <li>Study — full-time or part-time</li>
+            <li>Post videos, build an audience (more below)</li>
+            <li>Volunteer in unpaid roles</li>
+          </ul>
+        </div>
+        <div class="split-card dark">
+          <span class="tag">What you can't (yet)</span>
+          <ul>
+            <li>Earn employment income from a US employer</li>
+            <li>Monetize a US-based channel for revenue</li>
+            <li>Operate a US-registered business as your livelihood</li>
+            <li>File as self-employed in the US</li>
+          </ul>
+        </div>
+      </div>
+
+      <p>
+        That second list looks bigger than it actually is. Almost everything on it disappears the
+        day the EAD lands. Until then, two genuinely good options exist — and both compound
+        nicely over time.
+      </p>
+
+      <!-- ====== PART 2 — CHANNEL ====== -->
+      <h2>Your channel — start now, monetize later.</h2>
+      <p>
+        Here's the thing most people miss about the H-4 restrictions on YouTube: <em>they only
+        stop you from earning money</em>. They don't stop you from creating, posting, or
+        building an audience. And building an audience is the part that actually takes time.
+      </p>
+
+      <p>
+        Think of it this way. The hardest part of any channel isn't the monetization toggle —
+        that's a single click in YouTube Studio. The hardest part is the two years it usually
+        takes to get to the point where the toggle is worth flipping. Most creators don't reach
+        a substantial subscriber base for one to two years after starting consistently. So while
+        EAD is processing, <strong>you'd be doing the slow, compounding work that pays off
+        later anyway.</strong>
+      </p>
+
+      <div class="callout">
+        <p>
+          <strong>The reframe:</strong> the H-4 years aren't wasted years for your channel —
+          they're the foundation years. The years it would take to grow regardless. The only
+          difference is that when EAD arrives, you flip the switch and suddenly two years of
+          quiet work starts paying.
+        </p>
+      </div>
+
+      <div class="split-grid">
+        <div class="split-card">
+          <span class="tag">Phase 01 — On H-4</span>
+          <h4>Build the runway.</h4>
+          <ul>
+            <li>Create and publish freely — Instagram, YouTube, both</li>
+            <li>Grow subscribers, watch hours, your library</li>
+            <li>Do <strong>not</strong> enable monetization: no AdSense, no sponsorships, no Super Chats</li>
+            <li>Cross 1,000 subs / 4,000 hours? Hold the Partner Program off until EAD</li>
+            <li>Treat it as portfolio + audience, not income</li>
+          </ul>
+        </div>
+        <div class="split-card dark">
+          <span class="tag">Phase 02 — On EAD</span>
+          <h4>Flip the switch.</h4>
+          <ul>
+            <li>Enable YouTube Partner Program → AdSense starts paying</li>
+            <li>Accept paid sponsorships and brand collaborations</li>
+            <li>Merchandise, courses, ebooks, digital products</li>
+            <li>Affiliate links — Amazon Associates and others</li>
+            <li>Memberships, Super Thanks, channel perks</li>
+            <li>Optional: form an LLC for tax and liability protection</li>
+          </ul>
+        </div>
+      </div>
+
+      <p>
+        And once Phase 02 begins, the math is genuinely better than running the channel from
+        India. CPM (what YouTube pays per thousand views) is roughly three to five times higher
+        for US-based viewers. Sponsorships pay in dollars. The production ceiling is higher
+        because the kitchens, the ingredients, and the light are all different. "Indian food in
+        the US" is a real, well-funded niche.
+      </p>
+
+      <!-- ====== PART 3 — STUDIES (the big new section) ====== -->
+      <h2>The other smart move — studying.</h2>
+      <p>
+        I want to make a case for something you might not have considered: enrolling in a US
+        program during the H-4 window. The case is stronger than it sounds, and it rests on three
+        compounding advantages.
+      </p>
+
+      <div class="facts">
+        <div>
+          <div class="big">⅓<span class="unit"></span></div>
+          <div class="desc">In-state tuition cost</div>
+        </div>
+        <div>
+          <div class="big">36<span class="unit">mo</span></div>
+          <div class="desc">STEM OPT after graduation</div>
+        </div>
+        <div>
+          <div class="big">∞</div>
+          <div class="desc">Career paths it unlocks</div>
+        </div>
+      </div>
+
+      <h3>1. Tuition drops to roughly one-third.</h3>
+      <p>
+        Once we've lived in a state for about twelve months — the rules vary slightly by state —
+        you qualify as a state resident for tuition purposes. <strong>In-state rates are
+        typically one-third to one-half of what international students pay.</strong> A program
+        that costs $60,000 a year at international rates often costs $20,000 a year for state
+        residents. Over two years that's a difference north of seventy thousand dollars. This is
+        not a small detail.
+      </p>
+
+      <p>
+        So the move is: arrive on H-4, settle, let the residency clock tick, apply for the next
+        intake, get charged in-state. The same degree, same diploma, same employers reading the
+        resume — at a fraction of the cost.
+      </p>
+
+      <h3>2. The F-1 switch — your independent path to working.</h3>
+      <p>
+        Here's where it gets interesting. You don't have to stay on H-4 the whole time you're
+        studying. <strong>In your final semester, you can switch your visa status from H-4 to
+        F-1</strong> — the student visa. That switch is what unlocks the next door.
+      </p>
+
+      <p>
+        Graduation on F-1 entitles you to OPT — Optional Practical Training. Twelve months of
+        legal employment in your field, no employer sponsorship needed. And if the program is
+        STEM-designated, <strong>OPT extends to thirty-six months.</strong> Three years of legal
+        US work, independent entirely of my green-card timeline.
+      </p>
+
+      <p>
+        Which means: even if my EAD is taking forever, even if something goes sideways in my
+        immigration sequence, you have your own independent route to working in the US. From
+        there, an employer can sponsor you for your own H-1B. <em>You'd have your own
+        immigration status — not as my dependent, but as your own person, on your own visa.</em>
+        That matters to me. I imagine it matters to you.
+      </p>
+
+      <div class="quote-mark">
+        <blockquote>
+          The same degree, at a third of the cost, with a built-in path to your own H-1B. The H-4 turns into a launching pad instead of a waiting room.
+        </blockquote>
+        <cite>— The whole argument in one sentence</cite>
+      </div>
+
+      <h3>3. And if you'd rather come back to India — that works too.</h3>
+      <p>
+        Maybe the US plan doesn't end with "settle in the US forever." Maybe we move back to
+        India eventually, build something there, raise kids there, whatever feels right. The
+        studying still works for that.
+      </p>
+
+      <p>
+        <strong>A US degree in a field you actually care about</strong> — whether STEM or not
+        — gives you credibility, technical depth, and a network when we go back. UX programs in
+        particular have strong international ecosystems. So do design management, business
+        analytics, computer science. The point is: pick the program that matches the work you
+        want to do <em>regardless of geography</em>. The degree comes with you.
+      </p>
+
+      <h3>Programs that fit you, specifically.</h3>
+      <p>
+        Given your design background, channel, and eye for visuals — these are the natural
+        candidates. The STEM tag means thirty-six months of OPT instead of twelve. That's a
+        meaningful difference if the EAD route is slow.
+      </p>
+
+      <div class="course-grid">
+        <div class="course">
+          <span class="stem-tag">STEM</span>
+          <h4>UX / UI / HCI</h4>
+          <p>Many are STEM-designated. Your portfolio is your leg up. Direct career fit, strong designer-led companies in the US.</p>
+        </div>
+        <div class="course">
+          <span class="stem-tag">STEM</span>
+          <h4>Digital Media</h4>
+          <p>Storytelling, video production, modern journalism. Directly applicable to your channel work.</p>
+        </div>
+        <div class="course">
+          <h4>Marketing</h4>
+          <p>Audience growth, branding, sponsorship strategy. Turns the channel into a real business.</p>
+        </div>
+        <div class="course">
+          <span class="stem-tag">STEM</span>
+          <h4>Data Science</h4>
+          <p>36 months OPT, strong market. Data viz creators do remarkably well on YouTube.</p>
+        </div>
+        <div class="course">
+          <span class="stem-tag">STEM</span>
+          <h4>Computer Science</h4>
+          <p>36 months OPT. Rare hybrid: a designer who codes is paid more than either alone.</p>
+        </div>
+        <div class="course">
+          <span class="stem-tag">STEM</span>
+          <h4>MBA (Marketing focus)</h4>
+          <p>Two years, often STEM-designated. The alumni network is the real product.</p>
+        </div>
+      </div>
+
+      <div class="callout neutral">
+        <p>
+          <strong>State residency rules vary.</strong> Most states require twelve months physical
+          presence plus some intent-to-stay markers (driver's license, voter registration,
+          employment ties). We'll confirm the exact requirements for whichever state we end up in
+          before applying.
+        </p>
+      </div>
+
+    </section>
 
     <nav class="page-nav">
-      <a href="my-intent.html" class="prev">
-        <span class="dir">← previous</span>
+      <a href="my-intent.html">
+        <span class="dir">← Previous</span>
         <span class="title">My Intent</span>
       </a>
-      <a href="your-channel.html" class="next">
-        <span class="dir">next →</span>
-        <span class="title">Your Channel</span>
+      <a href="the-path.html" class="next">
+        <span class="dir">Next →</span>
+        <span class="title">The Path</span>
       </a>
     </nav>
-  </article>
+  </main>
 
-  <footer class="foot">
-    <p>page 3 of 7 · halfway through the boring bit</p>
+  <footer>
+    <p class="sig">Chapter 3 of 5</p>
+    <p class="meta">— Getting closer to the point —</p>
   </footer>
 
   <script src="../assets/script.js"></script>
