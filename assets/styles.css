@@ -884,3 +884,28 @@ footer .meta {
   text-transform: uppercase;
   color: var(--fg-4);
 }
+
+/* Bridge card responsive */
+@media (max-width: 700px) {
+  .bridge-card {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: 1fr auto 1fr;
+    height: auto !important;
+    min-height: 420px;
+  }
+  .bridge-card > div:nth-child(1),
+  .bridge-card > div:nth-child(3) {
+    height: 180px;
+  }
+  .bridge-card > div:nth-child(2) {
+    border-left: none !important;
+    border-right: none !important;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 1rem !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-ghungroo { width: 220px !important; right: -100px !important; opacity: 0.12 !important; }
+}
