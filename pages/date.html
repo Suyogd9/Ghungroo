@@ -9,7 +9,79 @@
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../assets/styles.css" />
   <style>
-    /* Date page specific */
+    /* ============ ROMANTIC THEME — Date Page ============ */
+    /* Override the base palette for this page only */
+    :root {
+      --rose-paper: #FBEEEE;
+      --rose-deep: #E8C5C5;
+      --rose-soft: #F4D9D9;
+      --burgundy: #6B1F2A;
+      --burgundy-deep: #4A1520;
+      --rose-accent: #C73E5A;
+      --gold-warm: #C9A461;
+      --ink-rose: #2D0E14;
+    }
+
+    body {
+      background: var(--rose-paper);
+      background-image:
+        radial-gradient(at 20% 10%, rgba(232, 197, 197, 0.4) 0px, transparent 50%),
+        radial-gradient(at 80% 80%, rgba(244, 217, 217, 0.5) 0px, transparent 50%);
+    }
+
+    /* Re-color the nav for warm page */
+    .nav-wrap {
+      background: linear-gradient(to bottom, var(--rose-paper) 60%, transparent);
+    }
+    .nav-logo .dot { background: var(--rose-accent); }
+    .nav-logo { color: var(--ink-rose); }
+    .nav-links {
+      background: rgba(255, 255, 255, 0.7);
+      border-color: var(--rose-deep);
+    }
+    .nav-links a { color: var(--burgundy); }
+    .nav-links a:hover { background: var(--rose-soft); color: var(--burgundy-deep); }
+    .nav-links a.active { background: var(--burgundy); color: var(--rose-paper); }
+
+    /* Re-color article body */
+    .article-hero .eyebrow { color: var(--rose-accent); }
+    .article-hero .eyebrow .dot { background: var(--rose-accent); }
+    h1, h2, h3 { color: var(--ink-rose); }
+    h1 .serif.accent, h1 .serif { color: var(--rose-accent); }
+    p { color: var(--burgundy); }
+    .article-content p { color: var(--burgundy); }
+    .article-content strong { color: var(--ink-rose); }
+    .lead { color: var(--burgundy); }
+    .article-hero { border-bottom-color: var(--rose-deep); }
+
+    /* Decorative ghungroo SVG accents */
+    .ghungroo-decoration {
+      position: absolute;
+      pointer-events: none;
+      opacity: 0.4;
+    }
+
+    .ghungroo-decoration.top-right {
+      top: 80px;
+      right: -40px;
+      width: 240px;
+      transform: rotate(15deg);
+    }
+
+    .ghungroo-decoration.mid-left {
+      top: 50%;
+      left: -80px;
+      width: 200px;
+      transform: rotate(-25deg);
+      opacity: 0.25;
+    }
+
+    @media (max-width: 800px) {
+      .ghungroo-decoration.top-right { width: 140px; right: -50px; }
+      .ghungroo-decoration.mid-left { display: none; }
+    }
+
+    /* Date page specific — repurposed for romance */
     .date-facts {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -18,16 +90,18 @@
     }
 
     .date-fact {
-      background: var(--bg-card);
-      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid var(--rose-deep);
       border-radius: var(--radius);
       padding: 1.5rem 1.5rem 1.75rem;
       transition: all 0.25s ease;
+      backdrop-filter: blur(8px);
     }
 
     .date-fact:hover {
-      border-color: var(--accent);
+      border-color: var(--rose-accent);
       transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(199, 62, 90, 0.15);
     }
 
     .date-fact .icon {
@@ -37,8 +111,8 @@
       width: 36px;
       height: 36px;
       border-radius: 10px;
-      background: var(--accent-soft);
-      color: var(--accent);
+      background: var(--rose-soft);
+      color: var(--rose-accent);
       margin-bottom: 1rem;
       font-size: 1.05rem;
     }
@@ -48,7 +122,7 @@
       font-size: var(--t-mono);
       letter-spacing: 0.04em;
       text-transform: uppercase;
-      color: var(--fg-4);
+      color: var(--rose-accent);
       margin-bottom: 0.4rem;
     }
 
@@ -56,21 +130,22 @@
       font-size: 1.15rem;
       font-weight: 500;
       letter-spacing: -0.015em;
-      color: var(--fg);
+      color: var(--ink-rose);
       line-height: 1.3;
     }
 
     @media (max-width: 700px) { .date-facts { grid-template-columns: 1fr; } }
 
-    /* RSVP — premium interactive */
+    /* RSVP — warm burgundy block */
     .rsvp-block {
-      background: var(--fg);
-      color: var(--bg);
+      background: linear-gradient(135deg, var(--burgundy) 0%, var(--burgundy-deep) 100%);
+      color: var(--rose-paper);
       border-radius: var(--radius-lg);
       padding: clamp(2rem, 5vw, 3.5rem);
       margin: 3rem 0;
       position: relative;
       overflow: hidden;
+      box-shadow: 0 20px 60px rgba(107, 31, 42, 0.25);
     }
 
     .rsvp-block::before {
@@ -78,9 +153,20 @@
       position: absolute;
       top: -50%;
       right: -10%;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(201, 164, 97, 0.18), transparent 70%);
+      pointer-events: none;
+    }
+
+    .rsvp-block::after {
+      content: "";
+      position: absolute;
+      bottom: -30%;
+      left: -10%;
       width: 400px;
       height: 400px;
-      background: radial-gradient(circle, rgba(212, 80, 30, 0.25), transparent 70%);
+      background: radial-gradient(circle, rgba(199, 62, 90, 0.18), transparent 70%);
       pointer-events: none;
     }
 
@@ -89,7 +175,7 @@
       font-size: var(--t-mono);
       letter-spacing: 0.04em;
       text-transform: uppercase;
-      color: var(--accent);
+      color: var(--gold-warm);
       margin-bottom: 1.5rem;
       display: flex;
       align-items: center;
@@ -99,13 +185,13 @@
     .rsvp-block .rsvp-eyebrow::before {
       content: "";
       width: 6px; height: 6px;
-      background: var(--accent);
+      background: var(--gold-warm);
       border-radius: 50%;
     }
 
     .rsvp-block h2 {
       font-family: var(--sans);
-      color: var(--bg);
+      color: var(--rose-paper);
       font-size: clamp(2rem, 4vw, 3rem);
       letter-spacing: -0.03em;
       margin-bottom: 0.7rem;
@@ -116,10 +202,11 @@
       font-family: var(--serif);
       font-style: italic;
       font-weight: 400;
+      color: var(--gold-warm);
     }
 
     .rsvp-block > p {
-      color: var(--fg-5);
+      color: rgba(255, 230, 230, 0.85);
       font-size: 1.05rem;
       margin-bottom: 2rem;
       max-width: 600px;
@@ -133,42 +220,43 @@
     }
 
     .rsvp-opt {
-      background: transparent;
-      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 230, 230, 0.15);
       border-radius: var(--radius);
       padding: 1.2rem 1.5rem;
       width: 100%;
       text-align: left;
       cursor: pointer;
-      color: var(--bg);
+      color: var(--rose-paper);
       font-family: var(--sans);
       transition: all 0.25s ease;
       display: flex;
       align-items: center;
       gap: 1rem;
+      backdrop-filter: blur(4px);
     }
 
     .rsvp-opt:hover:not(.disabled) {
-      border-color: var(--accent);
-      background: rgba(212, 80, 30, 0.08);
+      border-color: var(--gold-warm);
+      background: rgba(201, 164, 97, 0.1);
       transform: translateX(4px);
     }
 
     .rsvp-opt .check {
       width: 22px;
       height: 22px;
-      border: 1.5px solid rgba(255,255,255,0.3);
+      border: 1.5px solid rgba(255,255,255,0.35);
       border-radius: 50%;
       flex-shrink: 0;
       position: relative;
       transition: all 0.25s ease;
     }
 
-    .rsvp-opt:hover:not(.disabled) .check { border-color: var(--accent); }
+    .rsvp-opt:hover:not(.disabled) .check { border-color: var(--gold-warm); }
 
     .rsvp-opt.selected .check {
-      background: var(--accent);
-      border-color: var(--accent);
+      background: var(--gold-warm);
+      border-color: var(--gold-warm);
     }
 
     .rsvp-opt.selected .check::after {
@@ -178,13 +266,11 @@
       transform: translate(-50%, -55%) rotate(45deg);
       width: 5px;
       height: 9px;
-      border: solid var(--bg);
+      border: solid var(--burgundy-deep);
       border-width: 0 1.5px 1.5px 0;
     }
 
-    .rsvp-opt .opt-body {
-      flex: 1;
-    }
+    .rsvp-opt .opt-body { flex: 1; }
 
     .rsvp-opt .opt-label {
       font-weight: 500;
@@ -192,13 +278,14 @@
       letter-spacing: -0.01em;
       display: block;
       margin-bottom: 0.15rem;
+      color: var(--rose-paper);
     }
 
     .rsvp-opt .opt-sub {
       font-family: var(--serif);
       font-style: italic;
       font-size: 0.9rem;
-      color: var(--fg-5);
+      color: rgba(255, 230, 230, 0.7);
       font-weight: 400;
     }
 
@@ -206,14 +293,13 @@
       opacity: 0.35;
       cursor: not-allowed;
     }
-
     .rsvp-opt.disabled .opt-label { text-decoration: line-through; }
 
     .rsvp-disclaimer {
       margin-top: 1.5rem;
       font-family: var(--serif);
       font-style: italic;
-      color: var(--fg-5);
+      color: rgba(255, 230, 230, 0.7);
       font-size: 0.92rem;
       text-align: right;
     }
@@ -222,9 +308,9 @@
       display: none;
       margin-top: 1.5rem;
       padding: 1.5rem 1.75rem;
-      border: 1px solid var(--accent);
+      border: 1px solid var(--gold-warm);
       border-radius: var(--radius);
-      background: rgba(212, 80, 30, 0.08);
+      background: rgba(201, 164, 97, 0.12);
       animation: fadeUp 0.5s ease-out;
     }
     .response-card.show { display: block; }
@@ -232,7 +318,7 @@
       font-family: var(--serif);
       font-style: italic;
       font-size: 1.2rem;
-      color: var(--bg);
+      color: var(--rose-paper);
       margin: 0;
       max-width: 100%;
     }
@@ -242,7 +328,7 @@
       font-size: var(--t-mono);
       letter-spacing: 0.04em;
       text-transform: uppercase;
-      color: var(--accent);
+      color: var(--gold-warm);
       font-style: normal;
       margin-top: 0.6rem;
     }
@@ -252,18 +338,57 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
+    /* Override stack-cards for the romantic theme */
+    .article-content .stack-card {
+      background: rgba(255, 255, 255, 0.65);
+      border-color: var(--rose-deep);
+      backdrop-filter: blur(8px);
+    }
+    .article-content .stack-card::before { color: var(--rose-accent); }
+    .article-content .stack-card h3 { color: var(--ink-rose); }
+    .article-content .stack-card p { color: var(--burgundy); }
+    .article-content .stack-card p em { color: var(--ink-rose); }
+    .article-content .stack-card:hover {
+      border-color: var(--rose-accent);
+      box-shadow: 0 12px 36px rgba(199, 62, 90, 0.12);
+    }
+
+    /* Pull quote on romantic page */
+    .article-content .quote-mark blockquote {
+      color: var(--ink-rose);
+      border-left-color: var(--rose-accent);
+    }
+    .article-content .quote-mark cite { color: var(--rose-accent); }
+
     .closing-note {
       text-align: center;
       padding: 3rem 0 1rem;
+      position: relative;
     }
     .closing-note p {
       font-family: var(--serif);
       font-style: italic;
       font-size: clamp(1.3rem, 2.5vw, 1.7rem);
-      color: var(--fg-3);
+      color: var(--burgundy);
       max-width: 600px;
       margin: 0 auto;
     }
+
+    /* Page nav overrides */
+    .page-nav { border-top-color: var(--rose-deep); }
+    .page-nav a {
+      background: rgba(255, 255, 255, 0.6);
+      border-color: var(--rose-deep);
+    }
+    .page-nav a:hover { border-color: var(--rose-accent); background: rgba(255, 255, 255, 0.9); }
+    .page-nav .dir { color: var(--rose-accent); }
+    .page-nav .title { color: var(--ink-rose); }
+    .page-nav a:hover .title { color: var(--rose-accent); }
+
+    /* Footer */
+    footer { border-top-color: var(--rose-deep); }
+    footer .sig { color: var(--burgundy); }
+    footer .meta { color: var(--rose-accent); }
   </style>
 </head>
 <body>
@@ -286,7 +411,74 @@
     </nav>
   </div>
 
-  <main>
+  <main style="position: relative;">
+
+    <!-- Decorative ghungroo SVGs -->
+    <svg class="ghungroo-decoration top-right" viewBox="0 0 280 360" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <radialGradient id="bell1" cx="35%" cy="30%">
+          <stop offset="0%" stop-color="#E8C77C"/>
+          <stop offset="60%" stop-color="#C9A461"/>
+          <stop offset="100%" stop-color="#8B6E2F"/>
+        </radialGradient>
+        <radialGradient id="bell2" cx="35%" cy="30%">
+          <stop offset="0%" stop-color="#F0D293"/>
+          <stop offset="60%" stop-color="#D4B576"/>
+          <stop offset="100%" stop-color="#9F8043"/>
+        </radialGradient>
+      </defs>
+      <!-- String / cord -->
+      <path d="M 30 20 Q 60 60, 80 110 Q 100 180, 120 240 Q 150 290, 200 320" fill="none" stroke="#6B1F2A" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+      <path d="M 50 30 Q 80 70, 100 130 Q 130 210, 170 270 Q 200 310, 240 330" fill="none" stroke="#6B1F2A" stroke-width="2.5" stroke-linecap="round" opacity="0.5"/>
+      <!-- Bell cluster 1 -->
+      <g transform="translate(80, 105)">
+        <circle cx="0" cy="0" r="22" fill="url(#bell1)" stroke="#6B1F2A" stroke-width="1.5"/>
+        <circle cx="-5" cy="-7" r="7" fill="#FBE9B8" opacity="0.6"/>
+        <line x1="-12" y1="14" x2="12" y2="14" stroke="#6B1F2A" stroke-width="1" opacity="0.4"/>
+      </g>
+      <g transform="translate(115, 145)">
+        <circle cx="0" cy="0" r="19" fill="url(#bell2)" stroke="#6B1F2A" stroke-width="1.5"/>
+        <circle cx="-4" cy="-5" r="6" fill="#FBE9B8" opacity="0.6"/>
+      </g>
+      <g transform="translate(75, 175)">
+        <circle cx="0" cy="0" r="17" fill="url(#bell1)" stroke="#6B1F2A" stroke-width="1.5"/>
+        <circle cx="-3" cy="-4" r="5" fill="#FBE9B8" opacity="0.6"/>
+      </g>
+      <g transform="translate(135, 200)">
+        <circle cx="0" cy="0" r="20" fill="url(#bell2)" stroke="#6B1F2A" stroke-width="1.5"/>
+        <circle cx="-4" cy="-6" r="6" fill="#FBE9B8" opacity="0.6"/>
+      </g>
+      <g transform="translate(100, 235)">
+        <circle cx="0" cy="0" r="18" fill="url(#bell1)" stroke="#6B1F2A" stroke-width="1.5"/>
+      </g>
+      <g transform="translate(165, 245)">
+        <circle cx="0" cy="0" r="17" fill="url(#bell2)" stroke="#6B1F2A" stroke-width="1.5"/>
+        <circle cx="-3" cy="-4" r="5" fill="#FBE9B8" opacity="0.6"/>
+      </g>
+      <g transform="translate(145, 285)">
+        <circle cx="0" cy="0" r="16" fill="url(#bell1)" stroke="#6B1F2A" stroke-width="1.5"/>
+      </g>
+      <g transform="translate(195, 305)">
+        <circle cx="0" cy="0" r="18" fill="url(#bell2)" stroke="#6B1F2A" stroke-width="1.5"/>
+        <circle cx="-3" cy="-5" r="5" fill="#FBE9B8" opacity="0.6"/>
+      </g>
+    </svg>
+
+    <svg class="ghungroo-decoration mid-left" viewBox="0 0 220 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M 20 30 Q 60 80, 90 140 Q 130 220, 180 270" fill="none" stroke="#6B1F2A" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+      <g transform="translate(60, 90)">
+        <circle cx="0" cy="0" r="18" fill="url(#bell1)" stroke="#6B1F2A" stroke-width="1.5"/>
+      </g>
+      <g transform="translate(95, 140)">
+        <circle cx="0" cy="0" r="16" fill="url(#bell2)" stroke="#6B1F2A" stroke-width="1.5"/>
+      </g>
+      <g transform="translate(130, 195)">
+        <circle cx="0" cy="0" r="17" fill="url(#bell1)" stroke="#6B1F2A" stroke-width="1.5"/>
+      </g>
+      <g transform="translate(160, 245)">
+        <circle cx="0" cy="0" r="15" fill="url(#bell2)" stroke="#6B1F2A" stroke-width="1.5"/>
+      </g>
+    </svg>
     <section class="article-hero">
       <span class="eyebrow"><span class="dot"></span>Chapter 05 — The Last One</span>
       <h1>Will you go on a date <br/><span class="serif">with me?</span></h1>
@@ -414,6 +606,60 @@
 
       <div class="closing-note">
         <p>That's the site. Thanks for reading every word of it.</p>
+      </div>
+
+      <!-- Final visual moment — ghungroo signature -->
+      <div style="margin: 3rem 0 0; position: relative; padding: 3rem 0 2rem;">
+        <svg viewBox="0 0 600 200" xmlns="http://www.w3.org/2000/svg" style="display: block; margin: 0 auto; width: 100%; max-width: 600px;" aria-hidden="true">
+          <defs>
+            <radialGradient id="fbell" cx="35%" cy="30%">
+              <stop offset="0%" stop-color="#E8C77C"/>
+              <stop offset="60%" stop-color="#C9A461"/>
+              <stop offset="100%" stop-color="#8B6E2F"/>
+            </radialGradient>
+          </defs>
+          <!-- Curved string spanning the width -->
+          <path d="M 30 60 Q 150 30, 300 60 T 570 60" fill="none" stroke="#6B1F2A" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+          <path d="M 30 80 Q 150 50, 300 80 T 570 80" fill="none" stroke="#6B1F2A" stroke-width="1.5" stroke-linecap="round" opacity="0.4"/>
+          <!-- Bells along the string -->
+          <g transform="translate(60, 95)">
+            <circle r="14" fill="url(#fbell)" stroke="#6B1F2A" stroke-width="1"/>
+            <circle cx="-3" cy="-4" r="4" fill="#FBE9B8" opacity="0.6"/>
+          </g>
+          <g transform="translate(110, 110)">
+            <circle r="13" fill="url(#fbell)" stroke="#6B1F2A" stroke-width="1"/>
+          </g>
+          <g transform="translate(160, 105)">
+            <circle r="14" fill="url(#fbell)" stroke="#6B1F2A" stroke-width="1"/>
+            <circle cx="-3" cy="-4" r="4" fill="#FBE9B8" opacity="0.6"/>
+          </g>
+          <g transform="translate(215, 115)">
+            <circle r="15" fill="url(#fbell)" stroke="#6B1F2A" stroke-width="1"/>
+            <circle cx="-3" cy="-4" r="4" fill="#FBE9B8" opacity="0.6"/>
+          </g>
+          <g transform="translate(270, 108)">
+            <circle r="13" fill="url(#fbell)" stroke="#6B1F2A" stroke-width="1"/>
+          </g>
+          <g transform="translate(325, 115)">
+            <circle r="14" fill="url(#fbell)" stroke="#6B1F2A" stroke-width="1"/>
+            <circle cx="-3" cy="-4" r="4" fill="#FBE9B8" opacity="0.6"/>
+          </g>
+          <g transform="translate(380, 110)">
+            <circle r="15" fill="url(#fbell)" stroke="#6B1F2A" stroke-width="1"/>
+            <circle cx="-3" cy="-4" r="4" fill="#FBE9B8" opacity="0.6"/>
+          </g>
+          <g transform="translate(435, 115)">
+            <circle r="13" fill="url(#fbell)" stroke="#6B1F2A" stroke-width="1"/>
+          </g>
+          <g transform="translate(490, 105)">
+            <circle r="14" fill="url(#fbell)" stroke="#6B1F2A" stroke-width="1"/>
+            <circle cx="-3" cy="-4" r="4" fill="#FBE9B8" opacity="0.6"/>
+          </g>
+          <g transform="translate(540, 100)">
+            <circle r="13" fill="url(#fbell)" stroke="#6B1F2A" stroke-width="1"/>
+          </g>
+        </svg>
+        <p style="text-align: center; font-family: var(--serif); font-style: italic; color: var(--rose-accent); font-size: 1rem; letter-spacing: 0.05em; margin-top: 1.5rem;">— the ghungroos rest, their work done —</p>
       </div>
 
     </section>
